@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   baseUrl = 'http://localhost:8000/';
-  httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+  token = 'Token 2fd23b457493840c0bdb37db8cef6f8231ac980f';
+  httpHeaders = new HttpHeaders().set('Content-Type', 'application/json')
+    .set('Authorization', this.token);
   
   constructor(private http: HttpClient)  { }
 
@@ -21,6 +23,23 @@ export class ApiService {
     {headers: this.httpHeaders});
   };
 
+  updateMember(member) : Observable<any> {
+    let body = {name: member.name, surname: member.surname,
+        phone: member.phone}
+
+    return this.http.put(this.baseUrl + 'members/' + member.id + '/', body,
+    {headers: this.httpHeaders});
+  };
+
+  deleteMember(id) : Observable<any> {
+    return this.http.delete(this.baseUrl + 'members/' + id + '/',
+    {headers: this.httpHeaders});
+  };  
+
+  saveNewMember(member) : Observable<any>{
+    return this.http.post(this.baseUrl + 'members/', member,
+    {headers: this.httpHeaders});
+  }
 
 
 
