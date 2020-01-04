@@ -25,7 +25,7 @@ SECRET_KEY = 'sgo0**!*e119uy2lt+9)eoh(l*(kz==5s9o1uv&83l57nh7&cv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['34.95.232.253','localhost','127.0.0.1']
 
 
 # Application definition
@@ -138,7 +138,7 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 STATIC_URL = '/static/'
-STATTIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
