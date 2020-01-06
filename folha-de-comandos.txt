@@ -6,6 +6,7 @@ cd my-dream-app
 ng serve
 ng generate service api
 ng generate component members-detail
+ng build --prod
 
 Django
 django-admin stratproject myproject
@@ -20,3 +21,7 @@ sudo systemctl restart apache2
 sudo /etc/init.d/nginx restart
 sudo /etc/init.d/nginx start
 sudo systemctl restart djangovps.service
+
+outros
+
+sudo cp -av * /var/www/html/
