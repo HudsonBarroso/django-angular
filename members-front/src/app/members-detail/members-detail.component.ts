@@ -33,7 +33,7 @@ export class MembersDetailComponent implements OnInit {
         this.selected_member = data;
       },
       error => {
-        console.log("Aconteceu um erro", error.message);
+        console.log("Aconteceu um erro inadequado", error.message);
       }
     );    
   };
